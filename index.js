@@ -1,6 +1,8 @@
 // TODO: this file! :)
 const state = {
     numbers: [],
+    odd: [],
+    even: [],
   };
 
   const form = document.querySelector("form")
@@ -11,7 +13,6 @@ const state = {
   console.log(form)
   console.log(state)
   console.log(output)
-  console.log(input)
 
 //When the user clicks the "Add Number" button, the number they entered into the input field should be added to the number bank.
 form.addEventListener("submit", addNumber)
@@ -39,3 +40,24 @@ function addNumber(event) {
   //we call render numbers fx once we have the data to 
   renderNumbers(state.numbers, output)
 }
+
+
+//Sort numbers from bank into "odd" or "even" using respective buttons "one" or "all"
+
+const odds = document.querySelector("#odds > output")
+const evens = document.querySelector("#evens > output")
+
+//Sort one?
+const addOne = document.querySelector("#sortOne");
+addOne.addEventListener((event) => {
+  event.preventDefault();
+  const number = state.numbers.pop();
+    if (number % 2 == 0) {
+     state.even.push()
+     renderNumbers(state.even, output)
+
+    } else {
+      state.odd.push()
+   }
+   renderNumbers(state.odd,output)
+})
