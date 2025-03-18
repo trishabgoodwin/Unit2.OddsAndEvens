@@ -29,7 +29,7 @@ function renderNumbers(numberBank, element) {
 function addNumber(event) {
   //stopping default behavior of submit event which is to refresh page
   event.preventDefault();
-  //targeting the form elements with an attribute name = "number" (line 24), then we
+  //targeting the form elements with an attribute name = "number" , then we
   //read it's value
   const number = form.elements.number.value
   console.log(number)
@@ -49,15 +49,12 @@ const evens = document.querySelector("#evens > output")
 
 //Sort one?
 const addOne = document.querySelector("#sortOne");
-addOne.addEventListener((event) => {
-  event.preventDefault();
-  const number = state.numbers.pop();
-    if (number % 2 == 0) {
-     state.even.push()
-     renderNumbers(state.even, output)
-
+addOne.addEventListener(("click", () => {
+  //const number = state.numbers.pop();
+    if (state.numbers[0] % 2 == 0) {
+     state.even.push(state.numbers[0])
     } else {
-      state.odd.push()
+      state.odd.push(state.numbers[0])
    }
    renderNumbers(state.odd,output)
-})
+}))
